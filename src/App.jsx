@@ -3,7 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import Message from './components/Message';
 import RoseGarden from './components/RoseGarden';
-import Countdown from './components/Countdown';
+// import Countdown from './components/CountDown';
 import Footer from './components/Footer';
 
 function App() {
