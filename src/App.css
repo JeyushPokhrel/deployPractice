@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #4c4c4c;
+  text-align: center;
+  margin: 0;
+}
+
+h1, h2 {
+  font-family: 'Georgia', serif;
+  color: #d5005f;
+}
+
+.landing-page {
+  position: relative;
+  height: 100vh;
+  background-image: url('https://via.placeholder.com/1500x1000/ffebef/000000'); /* Add rose background */
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.landing-page .content {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-page:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds dark overlay */
+  z-index: 0;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #d5005f;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #ff4081;
+}
+
+.hidden {
+  display: none;
+}
+
+.rose-garden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full screen */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Dynamic grid */
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.message {
+  font-family: 'Dancing Script', cursive; /* Elegant script font */
+  font-size: 1.5em;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 20px;
+  color: #ff4081;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+
+.rose {
+  font-size: 3em;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.rose:hover {
+  transform: scale(1.2); /* Grow the rose slightly on hover */
+}
+
+.memory {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #d5005f;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #ffebef;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+
