@@ -1,36 +1,22 @@
-import React, { useEffect, useState } from 'react';
+// src/components/Countdown.js
+import React, { useState, useEffect } from 'react';
 
 const Countdown = () => {
-  const [timer, setTimer] = useState('');
+  const [timeLeft, setTimeLeft] = useState(10); // Set your countdown time here
 
   useEffect(() => {
-    const countdownDate = new Date("Feb 14, 2026 00:00:00").getTime(); // Target date
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      if (distance < 0) {
-        clearInterval(interval);
-        setTimer("It's time for our special moment!");
-      } else {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        setTimer(`${days}d ${hours}h ${minutes}m ${seconds}s`);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval); // Clean up interval on component unmount
-  }, []);
+    if (timeLeft > 0) {
+      const timer = setInterval(() => setTimeLeft(timeLeft - 1), 1000);
+      return () => clearInterval(timer); // Cleanup interval on unmount
+    }
+  }, [timeLeft]);
 
   return (
     <div className="countdown">
-      <h2>Countdown to Our Next Special Moment</h2>
-      <div>{timer}</div>
+      <h2>Countdown to Our Special Day:</h2>
+      <p>{timeLeft} seconds remaining...</p>
     </div>
   );
-}
+};
 
 export default Countdown;
